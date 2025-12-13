@@ -57,11 +57,18 @@ class UserController extends Controller
 
         return response()->json($user, 200, [], JSON_PRETTY_PRINT);
     }
-    public function destroy(string $id)
-    {
-        $user = User::findOrFail($id);
-        $user->delete();
-
-        return response()->json(null, 204);
+  public function destroy(string $id)
+{
+    $user = User::findOrFail($id);
+    
+    // Check if user has any trips
+    if ($user->tripsAsPassenger()->exists() || $user->tripsAsDriver()->exists()) {
+        return response()->json([
+            'message' => 'Cannot delete user because they have associated trips.'
+        ], 422);
     }
+    
+    $user->delete();
+    return response()->json(null, 204);
+}
 }

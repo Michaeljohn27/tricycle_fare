@@ -16,16 +16,12 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "key": "X-Requested-With",
-                "value": "XMLHttpRequest"
               }
             ],
             "url": {
-              "raw": "{{base_url}}/users",
+              "raw": "{{base_url}}/api/users",
               "host": ["{{base_url}}"],
-              "path": ["users"]
+              "path": ["api", "users"]
             }
           }
         },
@@ -41,20 +37,16 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "key": "X-Requested-With",
-                "value": "XMLHttpRequest"
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"password123\",\n    \"mobileNumber\": \"09123456789\"\n}"
+              "raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\",\n    \"password\": \"password123\"\n}"
             },
             "url": {
-              "raw": "{{base_url}}/users",
+              "raw": "{{base_url}}/api/users",
               "host": ["{{base_url}}"],
-              "path": ["users"]
+              "path": ["api", "users"]
             }
           }
         },
@@ -66,16 +58,12 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "key": "X-Requested-With",
-                "value": "XMLHttpRequest"
               }
             ],
             "url": {
-              "raw": "{{base_url}}/users/1",
+              "raw": "{{base_url}}/api/users/1",
               "host": ["{{base_url}}"],
-              "path": ["users", "1"]
+              "path": ["api", "users", "1"]
             }
           }
         },
@@ -91,20 +79,16 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "key": "X-Requested-With",
-                "value": "XMLHttpRequest"
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"firstName\": \"John Updated\",\n    \"lastName\": \"Doe\",\n    \"email\": \"john.updated@example.com\",\n    \"mobileNumber\": \"09123456789\"\n}"
+              "raw": "{\n    \"name\": \"Updated Name\",\n    \"email\": \"updated@example.com\"\n}"
             },
             "url": {
-              "raw": "{{base_url}}/users/1",
+              "raw": "{{base_url}}/api/users/1",
               "host": ["{{base_url}}"],
-              "path": ["users", "1"]
+              "path": ["api", "users", "1"]
             }
           }
         },
@@ -116,16 +100,12 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "key": "X-Requested-With",
-                "value": "XMLHttpRequest"
               }
             ],
             "url": {
-              "raw": "{{base_url}}/users/1",
+              "raw": "{{base_url}}/api/users/1",
               "host": ["{{base_url}}"],
-              "path": ["users", "1"]
+              "path": ["api", "users", "1"]
             }
           }
         }
@@ -142,16 +122,12 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "key": "X-Requested-With",
-                "value": "XMLHttpRequest"
               }
             ],
             "url": {
-              "raw": "{{base_url}}/fares",
+              "raw": "{{base_url}}/api/fares",
               "host": ["{{base_url}}"],
-              "path": ["fares"]
+              "path": ["api", "fares"]
             }
           }
         },
@@ -167,20 +143,16 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "key": "X-Requested-With",
-                "value": "XMLHttpRequest"
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"origin\": \"Manila\",\n    \"destination\": \"Quezon City\",\n    \"baseFare\": 50.00,\n    \"distance\": 10.5,\n    \"discount\": 5.00,\n    \"time\": \"00:25:00\",\n    \"final_fare\": 45.00\n}"
+              "raw": "{\n    \"origin\": \"Downtown\",\n    \"destination\": \"Uptown\",\n    \"amount\": 50.00\n}"
             },
             "url": {
-              "raw": "{{base_url}}/fares",
+              "raw": "{{base_url}}/api/fares",
               "host": ["{{base_url}}"],
-              "path": ["fares"]
+              "path": ["api", "fares"]
             }
           }
         },
@@ -192,16 +164,12 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "key": "X-Requested-With",
-                "value": "XMLHttpRequest"
               }
             ],
             "url": {
-              "raw": "{{base_url}}/fares/1",
+              "raw": "{{base_url}}/api/fares/1",
               "host": ["{{base_url}}"],
-              "path": ["fares", "1"]
+              "path": ["api", "fares", "1"]
             }
           }
         },
@@ -217,20 +185,16 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "key": "X-Requested-With",
-                "value": "XMLHttpRequest"
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"baseFare\": 55.00,\n    \"discount\": 10.00,\n    \"final_fare\": 45.00\n}"
+              "raw": "{\n    \"origin\": \"Updated Origin\",\n    \"destination\": \"Updated Destination\",\n    \"amount\": 60.00\n}"
             },
             "url": {
-              "raw": "{{base_url}}/fares/1",
+              "raw": "{{base_url}}/api/fares/1",
               "host": ["{{base_url}}"],
-              "path": ["fares", "1"]
+              "path": ["api", "fares", "1"]
             }
           }
         },
@@ -242,16 +206,12 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "key": "X-Requested-With",
-                "value": "XMLHttpRequest"
               }
             ],
             "url": {
-              "raw": "{{base_url}}/fares/1",
+              "raw": "{{base_url}}/api/fares/1",
               "host": ["{{base_url}}"],
-              "path": ["fares", "1"]
+              "path": ["api", "fares", "1"]
             }
           }
         }
@@ -268,16 +228,12 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "key": "X-Requested-With",
-                "value": "XMLHttpRequest"
               }
             ],
             "url": {
-              "raw": "{{base_url}}/trips",
+              "raw": "{{base_url}}/api/trips",
               "host": ["{{base_url}}"],
-              "path": ["trips"]
+              "path": ["api", "trips"]
             }
           }
         },
@@ -293,20 +249,16 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "key": "X-Requested-With",
-                "value": "XMLHttpRequest"
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"passenger_id\": 1,\n    \"driver_id\": 1,\n    \"trip_status\": \"completed\",\n    \"start_location\": \"Manila\",\n    \"end_location\": \"Quezon City\",\n    \"distance\": 10.5\n}"
+              "raw": "{\n    \"user_id\": 1,\n    \"fare_id\": 1,\n    \"origin\": \"Downtown\",\n    \"destination\": \"Uptown\",\n    \"status\": \"completed\"\n}"
             },
             "url": {
-              "raw": "{{base_url}}/trips",
+              "raw": "{{base_url}}/api/trips",
               "host": ["{{base_url}}"],
-              "path": ["trips"]
+              "path": ["api", "trips"]
             }
           }
         },
@@ -318,16 +270,12 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "key": "X-Requested-With",
-                "value": "XMLHttpRequest"
               }
             ],
             "url": {
-              "raw": "{{base_url}}/trips/1",
+              "raw": "{{base_url}}/api/trips/1",
               "host": ["{{base_url}}"],
-              "path": ["trips", "1"]
+              "path": ["api", "trips", "1"]
             }
           }
         },
@@ -343,20 +291,16 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "key": "X-Requested-With",
-                "value": "XMLHttpRequest"
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"trip_status\": \"completed\",\n    \"end_location\": \"Makati\"\n}"
+              "raw": "{\n    \"status\": \"cancelled\"\n}"
             },
             "url": {
-              "raw": "{{base_url}}/trips/1",
+              "raw": "{{base_url}}/api/trips/1",
               "host": ["{{base_url}}"],
-              "path": ["trips", "1"]
+              "path": ["api", "trips", "1"]
             }
           }
         },
@@ -368,16 +312,12 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "key": "X-Requested-With",
-                "value": "XMLHttpRequest"
               }
             ],
             "url": {
-              "raw": "{{base_url}}/trips/1",
+              "raw": "{{base_url}}/api/trips/1",
               "host": ["{{base_url}}"],
-              "path": ["trips", "1"]
+              "path": ["api", "trips", "1"]
             }
           }
         }
@@ -387,11 +327,8 @@
   "variable": [
     {
       "key": "base_url",
-      "value": "http://localhost:8000",
+      "value": "http://127.0.0.1:8000",
       "type": "string"
     }
-  ],
-  "auth": {
-    "type": "noauth"
-  }
+  ]
 }

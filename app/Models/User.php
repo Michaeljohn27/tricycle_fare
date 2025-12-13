@@ -2,21 +2,15 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
     protected $fillable = [
         'firstName',
         'lastName',
@@ -25,24 +19,38 @@ class User extends Authenticatable
         'mobileNumber',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
-     */
     protected $hidden = [
         'password',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
     protected function casts(): array
     {
         return [
             'password' => 'hashed',
         ];
+    }
+
+    /**
+     * Get all trips where the user is a passenger
+     */
+    public function tripsAsPassenger(): HasMany
+    {
+        return $this->hasMany(Trip::class, 'passenger_id');
+    }
+
+    /**
+     * Get all trips where the user is a driver
+     */
+    public function tripsAsDriver(): HasMany
+    {
+        return $this->hasMany(Trip::class, 'driver_id');
+    }
+
+    /**
+     * Check if the user has any trips (as passenger or driver)
+     */
+    public function hasAnyTrips(): bool
+    {
+        return $this->tripsAsPassenger()->exists() || $this->tripsAsDriver()->exists();
     }
 }

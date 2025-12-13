@@ -49,10 +49,10 @@ class TripController extends Controller
         return response()->json($trip, 200, [], JSON_PRETTY_PRINT);
     }
     public function destroy(string $id)
-    {
-        $trip = Trip::findOrFail($id);
-        $trip->delete();
+{
+    $trip = Trip::findOrFail($id);
+    $trip->delete();
 
-        return response()->json(null, 204);
-    }
+    return response()->json(null, 201);
+}
 }
